@@ -24,3 +24,18 @@ class AlbumViewSet(mixins.ListModelMixin,
 
 album_list = AlbumViewSet.as_view({'get': 'list'})
 album_detail = AlbumViewSet.as_view({'get': 'retrieve'})
+
+class MusicViewSet(mixins.ListModelMixin,
+                   mixins.RetrieveModelMixin,
+                   viewsets.GenericViewSet):
+    serializer_class = MusicSerializer
+    filter_backends = (filters.SearchFilter, DjangoFilterBackend)
+    filteset_fields = ('title', 'artist__name')
+    search_fields = ('title', 'artist__name')
+
+    def get_queryset(self):
+        return Music.objects.filter()
+
+
+music_list = MusicViewSet.as_view({'get': 'list'})
+music_detail = MusicViewSet.as_view({'get': 'retrieve'})

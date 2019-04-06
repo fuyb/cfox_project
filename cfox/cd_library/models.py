@@ -16,6 +16,7 @@ class Artist(BaseModel):
     class Meta:
         verbose_name = _(u'艺术家')
         verbose_name_plural = _(u'艺术家')
+        ordering = ('-created',)
 
 
 GENRE_CHOICES = (
@@ -44,6 +45,7 @@ class Album(BaseModel):
     class Meta:
         verbose_name = _(u'专集')
         verbose_name_plural = _(u'专集')
+        ordering = ('-created',)
 
 
 class Music(BaseModel):
@@ -68,3 +70,4 @@ class Music(BaseModel):
     class Meta:
         verbose_name = _(u'音乐')
         verbose_name_plural = _(u'音乐')
+        ordering = ('-created',)

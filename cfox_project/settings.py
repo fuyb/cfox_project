@@ -42,8 +42,16 @@ INSTALLED_APPS = [
 ]
 
 INSTALLED_APPS += [
-    'django_extensions'
+    # Thirdparty apps
+    'django_extensions',
+    'rest_framework',
+    # Project apps
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

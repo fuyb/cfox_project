@@ -46,6 +46,7 @@ INSTALLED_APPS += [
     'django_extensions',
     'rest_framework',
     # Project apps
+    'core.apps.CoreConfig',
 ]
 
 REST_FRAMEWORK = {
